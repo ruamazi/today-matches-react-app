@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./app.module.css";
+import FetchDIrectyl from "./components/FetchDIrectyl";
 
 function App() {
   const [datos, setDatos] = useState(null);
   const [loading, setLorading] = useState(true);
   const [isRunning, setIsRunning] = useState(false);
-  const [showLive, setShowLive] = useState(false);
 
   const handleFetchFootball = async () => {
     setLorading(true);
@@ -94,6 +94,7 @@ function App() {
           ))}
         </div>
       ))}
+      <FetchDIrectyl />
     </div>
   );
 }
