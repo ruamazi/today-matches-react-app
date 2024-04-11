@@ -14,7 +14,7 @@ function App() {
       method: "GET",
       url: "https://football-results-of-today.p.rapidapi.com/today",
       headers: {
-        "X-RapidAPI-Key": "ab9cefa600msh83963bcbb17c559p126fecjsn13fe0f01fb7d",
+        "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
         "X-RapidAPI-Host": "football-results-of-today.p.rapidapi.com",
       },
     };
@@ -35,7 +35,7 @@ function App() {
     if (isRunning) {
       intervalId = setInterval(() => {
         handleFetchFootball();
-      }, 30000); // 30sec in milliseconds
+      }, 30000);
     }
     return () => {
       clearInterval(intervalId);
